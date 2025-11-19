@@ -32,30 +32,33 @@
 
     <script>
       let list = document.querySelector("ul");
-      let userInput = "orange"; //document.querySelector("input");
+      let userInput = document.querySelector("input");
       let addingButton = document.querySelector("button");
 
       function buttonClicked() {
-        button.preventDefault(); // so the list won't refresh if "enter" is pressed (bc button in form)
+        form.preventDefault(); // so the list won't refresh if "enter" is pressed (bc button in form)
         let currentInput = userInput;
         userInput = "";
 
         let listItem = document.createElement("li");
         let spanThingy = document.createElement("span");
         let deleteButton = document.createElement("button");
-        listItem.appendChild(spanThingy);
-        listItem.appendChild(deleteButton);
-
         spanThingy.textContent = currentInput;
         deleteButton.textContent = "Delete";
 
+        listItem.appendChild(spanThingy);
+        listItem.appendChild(deleteButton);
         list.appendChild(listItem);
+
+        // need to somehow make the list item appear in the list before clearing the input box
 
         deleteButton.addEventListener("click", (listItem) => listItem.remove());
 
-        currentInput.focus(); // scrolls back up to the input box and puts a light box around it
-          // -> prepared for the next entry
+        // not working for some reason
+        currentInput.focus();
       }
+
+      addingButton.addEventListener("click", buttonClicked());
     </script>
   </body>
 </html>
