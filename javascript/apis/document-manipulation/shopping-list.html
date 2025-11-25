@@ -51,6 +51,7 @@
         deleteButton.textContent = "Delete";
         list.appendChild(listItem);
 
+        // .remove() is for strings, not DOM elements
         deleteButton.addEventListener("click", () => {list.removeChild(listItem)});
 
         input.focus();
