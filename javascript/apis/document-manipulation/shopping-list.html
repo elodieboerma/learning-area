@@ -31,34 +31,30 @@
     </ul>
 
     <script>
-      let list = document.querySelector("ul");
-      let userInput = document.querySelector("input");
-      let addingButton = document.querySelector("button");
+      const list = document.querySelector("ul");
+      const input = document.querySelector("input");
+      const button = document.querySelector("button");
 
-      function buttonClicked() {
-        form.preventDefault(); // so the list won't refresh if "enter" is pressed (bc button in form)
-        let currentInput = userInput;
-        userInput = "";
+      button.addEventListener("click", (event) => {
+        event.preventDefault(); // so the list won't refresh if "enter" is pressed (bc button in form)
+        
+        const currentInput = input.value;
+        input.value = "";
 
-        let listItem = document.createElement("li");
-        let spanThingy = document.createElement("span");
-        let deleteButton = document.createElement("button");
-        spanThingy.textContent = currentInput;
-        deleteButton.textContent = "Delete";
+        const listItem = document.createElement("li");
+        const spanThingy = document.createElement("span");
+        const deleteButton = document.createElement("button");
 
         listItem.appendChild(spanThingy);
+        spanThingy.textContent = currentInput;
         listItem.appendChild(deleteButton);
+        deleteButton.textContent = "Delete";
         list.appendChild(listItem);
 
-        // need to somehow make the list item appear in the list before clearing the input box
+        deleteButton.addEventListener("click", () => {list.removeChild(listItem)});
 
-        deleteButton.addEventListener("click", (listItem) => listItem.remove());
-
-        // not working for some reason
-        currentInput.focus();
-      }
-
-      addingButton.addEventListener("click", buttonClicked());
+        input.focus();
+      });
     </script>
   </body>
 </html>
