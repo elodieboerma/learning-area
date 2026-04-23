@@ -1,3 +1,35 @@
+/* Font imports */
+
+/*@font-face {
+    font-family: 'amerikaRegular';
+    src: url('myWebFonts/Amerika.woff2') format('woff2'),
+        url('myWebFonts/Amerika.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'aliceRegular';
+    src: url('myWebFonts/Alice-Regular.woff2') format('woff2'),
+        url('myWebFonts/Alice-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}*/
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.delius-regular {
+  font-family: "Delius", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* General setup */
 
 html {
@@ -15,15 +47,28 @@ body {
 /* Typography */
 
 h1 {
-  font-size: 3.2rem;
+  /*font-size: 3.2rem;*/
+  font-size: 4rem;
 }
 
 h2 {
-  font-size: 2.4rem;
+  /*font-size: 2.4rem;*/
+  font-size: 3rem;
+}
+
+h1, h2 {
+  /*font-family: 'amerikaRegular';
+  letter-spacing: 0.1rem;*/
+  font-family: 'Pacifico';
+  letter-spacing: 0.1rem;
 }
 
 p {
-  font-size: 1.4rem;
+  /*font-size: 1.6rem;*/
+  font-size: 1.5rem; /* originally 1.4 */
   line-height: 1.6;
   word-spacing: 0.6rem;
+  letter-spacing: 0.05rem;
+  /*font-family: 'aliceRegular';*/
+  font-family: 'Delius';
 }
